@@ -1,539 +1,427 @@
-
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Administration</title>
+    <title>Admin Panel</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="adm-assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link href="adm-assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Custom CSS -->
-    <link href="adm-assets/dist/css/sb-admin-2.css" rel="stylesheet">
-
+    <link href="adm-assets/dist/css/sb-admin-2.css" rel="stylesheet" />
     <!-- Custom Fonts -->
-    <link href="adm-assets/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="adm-assets/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  </head>
 
-
-</head>
-
-<body>
-
+  <body>
+    <!--whole page wrapper -->
     <div id="wrapper">
+      <!-- Navigation -->
+      <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <!-- brand name header  -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" style="color: #990000">NITJ - SuperUser </a>
+        </div>
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#" style="color:#990000;">Hello... </a>
-          </div>
-<ul class="nav navbar-top-links navbar-right">
-    <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
-        </a>
-        <ul class="dropdown-menu dropdown-messages">
-            <li>
+        <!-- top links  -->
+        <ul class="nav navbar-top-links navbar-right">
+          <!-- dropdown -->
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-messages">
+              <li>
                 <a href="#">
-                    <div>
-                        <strong>John Smith</strong>
-                        <span class="pull-right text-muted">
-                            <em>Yesterday</em>
-                        </span>
-                    </div>
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                  <div>
+                    <strong>John Smith</strong>
+                    <span class="pull-right text-muted">
+                      <em>Yesterday</em>
+                    </span>
+                  </div>
+                  <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
                 </a>
-            </li>
-            <li class="divider"></li>
-            <li>
+              </li>
+              <li class="divider"></li>
+            </ul>
+          </li>
+
+          <!-- dropdown -->
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-tasks">
+              <li>
                 <a href="#">
-                    <div>
-                        <strong>John Smith</strong>
-                        <span class="pull-right text-muted">
-                            <em>Yesterday</em>
-                        </span>
-                    </div>
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-                <a href="#">
-                    <div>
-                        <strong>John Smith</strong>
-                        <span class="pull-right text-muted">
-                            <em>Yesterday</em>
-                        </span>
-                    </div>
-                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-                <a class="text-center" href="#">
-                    <strong>Read All Messages</strong>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-        <!-- /.dropdown-messages -->
-    </li>
-    <!-- /.dropdown -->
-    <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
-        </a>
-        <ul class="dropdown-menu dropdown-tasks">
-            <li>
-                <a href="#">
-                    <div>
-                        <p>
-                            <strong>Task 1</strong>
-                            <span class="pull-right text-muted">40% Complete</span>
-                        </p>
-                        <div class="progress progress-striped active">
-                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                <span class="sr-only">40% Complete (success)</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-                <a href="#">
-                    <div>
-                        <p>
-                            <strong>Task 2</strong>
-                            <span class="pull-right text-muted">20% Complete</span>
-                        </p>
-                        <div class="progress progress-striped active">
-                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                <span class="sr-only">20% Complete</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-                <a href="#">
-                    <div>
-                        <p>
-                            <strong>Task 3</strong>
-                            <span class="pull-right text-muted">60% Complete</span>
-                        </p>
-                        <div class="progress progress-striped active">
-                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                <span class="sr-only">60% Complete (warning)</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-                <a href="#">
-                    <div>
-                        <p>
-                            <strong>Task 4</strong>
-                            <span class="pull-right text-muted">80% Complete</span>
-                        </p>
-                        <div class="progress progress-striped active">
-                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                <span class="sr-only">80% Complete (danger)</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-                <a class="text-center" href="#">
-                    <strong>See All Tasks</strong>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-        <!-- /.dropdown-tasks -->
-    </li>
-    <!-- /.dropdown -->
-    <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
-        </a>
-        <ul class="dropdown-menu dropdown-alerts">
-            <li>
-                <a href="#">
-                    <div>
-                        <i class="fa fa-comment fa-fw"></i> New Comment
-                        <span class="pull-right text-muted small">4 minutes ago</span>
-                    </div>
-                </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-                <a href="#">
-                    <div>
-                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                        <span class="pull-right text-muted small">12 minutes ago</span>
-                    </div>
-                </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-                <a href="#">
-                    <div>
-                        <i class="fa fa-envelope fa-fw"></i> Message Sent
-                        <span class="pull-right text-muted small">4 minutes ago</span>
-                    </div>
-                </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-                <a href="#">
-                    <div>
-                        <i class="fa fa-tasks fa-fw"></i> New Task
-                        <span class="pull-right text-muted small">4 minutes ago</span>
-                    </div>
-                </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-                <a href="#">
-                    <div>
-                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                        <span class="pull-right text-muted small">4 minutes ago</span>
-                    </div>
-                </a>
-            </li>
-            <li class="divider"></li>
-            <li>
-                <a class="text-center" href="#">
-                    <strong>See All Alerts</strong>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-        <!-- /.dropdown-alerts -->
-    </li>
-    <!-- /.dropdown -->
-    <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-            <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-        </a>
-        <ul class="dropdown-menu dropdown-user">
-            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-            </li>
-            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-            </li>
-            <li class="divider"></li>
-            <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-            </li>
-        </ul>
-        <!-- /.dropdown-user -->
-    </li>
-    <!-- /.dropdown -->
-</ul>
-<!-- /.navbar-top-links -->
-          <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
-
-                        <li>
-                          <a href="#"><i class="fa fa-sitemap fa-fw"></i> Menus<span class="fa arrow"></span></a>
-                          <ul class="nav nav-second-level">
-                            <li><a href="#"><i class="fa fa-edit fa-fw"></i> Add New Menus</a></li>
-                            <li><a href="#"><i class="fa fa-edit fa-fw"></i> Edit Menus Contents</a></li>
-                          </ul>
-                        </li>
-
-
-
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                              <li><a href="#"><i class="fa fa-edit fa-fw"></i> Add New Pages</a></li>
-                              <li><a href="#"><i class="fa fa-edit fa-fw"></i> Edit Pages Contents</a></li>
-                            </ul>
-                        </li>
-
-
-
-                        <li>
-                            <a href="#"><i class="fa fa-user fa-fw"></i> Users<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#"><i class="fa fa-user fa-fw"></i> Administrator</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-user fa-fw"></i> Faculty</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-
-
-
-
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Advanced Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                              <li>
-                                  <a href="#"><i class="fa fa-files-o fa-fw"></i> News Section</a>
-                              </li>
-
-                              <li>
-                                    <a href="#"><i class="fa fa-files-o fa-fw"></i> Upcoming Events</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-files-o fa-fw"></i> Student Corner</a>
-                                </li>
-
-                                <li>
-                                    <a href="#"><i class="fa fa-files-o fa-fw"></i> Tenders</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-files-o fa-fw"></i> Scholarship</a>
-                                </li>
-
-                                <li>
-                                    <a href="#"><i class="fa fa-files-o fa-fw"></i> Recruitment</a>
-                                </li>
-
-                                <li>
-                                    <a href="#"><i class="fa fa-files-o fa-fw"></i> Downloads Section</a>
-                                </li>
-
-                                <li>
-                                    <a href="#"><i class="fa fa-files-o fa-fw"></i> Other Links Section</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-
-                        <li>
-                            <a href="#"><i class="fa fa-edit fa-fw"></i>Admissions</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-edit fa-fw"></i>Results</a>
-                        </li>
-
-                        <li>
-                            <a href="#"><i class="fa fa-upload fa-fw"></i> Add Files</a>
-                        </li>
-
-                        <li>
-                         <a href="#"><i class="fa fa-camera fa-fw"></i> Add Images<span class="fa arrow"></span></a>
-                           <ul class="nav nav-second-level">
-                               <li>
-                                   <a href="#"><i class="fa fa-camera fa-fw"></i> Home Page Image Slider</a>
-                               </li>
-                               <li>
-                                   <a href="#"><i class="fa fa-camera fa-fw"></i> Home Page Photo Gallery</a>
-                               </li>
-                               <li>
-                                   <a href="#"><i class="fa fa-camera fa-fw"></i> Photo Gallery </a>
-                               </li>
-                           </ul>
-                         </li>
-
-
-                        <li>
-                            <a href="#"><i class="fa fa-edit fa-fw"></i>Home Setting</a>
-                        </li>
-                      
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-          </nav>
-
-<div id="page-wrapper">
-
-    
-         <!-- /.row -->
-         <div class="row">
-             <div class="col-lg-12">
-                 <div class="panel panel-default">
-                     <div class="panel-heading">
-                        <h3> Add message</h3>
-                     </div>
-                     <div class="panel-body">
-                         <div class="row">
-                             <div class="col-lg-6">
-              
-                                 <form role="form">
-                                
-                                     <div class="form-group">
-                                         <label>messageText</label>
-                                         <input class="form-control" placeholder="Enter Title of news" id = "messageText" name = "messageText"><br>
-                                         <label>Name</label>
-                                         <input class="form-control" placeholder="Enter Text of news" id = "Name" name = "Name"><br>
-                                         <label>designation</label>
-                                         <input class="form-control" placeholder="Enter Category of news" id = "designation" name = "designation"><br>
-                                         <label>Date(when it was uploaded)</label>
-                                         <input type="date" placeholder="Enter date of news" id = "uploadDate" name = "uploadDate"><br>
-                                      <!-- <label>Date(last-updated)</label>
-                                         <input type="date" placeholder="Updated date" id = "News_name" name = "News_name"><br>-->
-                                         <label>Name</label>
-                                    <input class="form-control" placeholder="Name" id = "name" name = "name"><br>
-                                    <label>E-mail</label>
-                                    <input class="form-control" placeholder="E-mail" id = "email" name = "email"><br>
-                                    <label>Designation</label>
-                                    <input class="form-control" placeholder="Designation" id = "designation" name = "designation"><br>
-                                    <label>Department</label>
-                                    <input class="form-control" placeholder="Department" id = "department" name = "department"><br>
-                                       <label>Content Image</label>
-                                       <input class="form-control" type = "file" value = "upload" id = "userfile" name = "userfile">
-                                    <br>
-                                </div>
-
-                                   <button type="submit" name = "action" value ="add_news" class="btn btn-default">Insert</button>
-
-                                  <div class="form-group">
-                                     <h3 class="page-header">Delete News</h3>
-                                         <select  id = "del_menu" name = "del_menu"  class="form-control">
-                                           <option value = 0>Select News </option>
-                                     
-                                         </select>
-                                     </div>
-                                     <button type="Submit" name = "action" value ="delete_menu" class="btn btn-default">Delete</button>
-
-                                 </form>
-
-                             </div>
-                         </div>
-                         <!-- /.row (nested) -->
-                     </div>
-                     <!-- /.panel-body -->
-                 </div>
-                 <!-- /.panel -->
-             </div>
-             <!-- /.col-lg-12 -->
-         </div>
-         <!-- /.row -->
-         <div class="row">
-             <div class="col-lg-12">
-                 <div class="panel panel-default">
-                     <div class="panel-heading">
-                         <h3>Edit </h3>
-                         <label style="color:#990000">Note: , <a href="<?php echo base_url();?>index.php/Sadmin/advPages/Edit_Menus">Click Here</a></label>
+                  <div>
+                    <p>
+                      <strong>Task 1</strong>
+                      <span class="pull-right text-muted">40% Complete</span>
+                    </p>
+                    <div class="progress progress-striped active">
+                      <div
+                        class="progress-bar progress-bar-success"
+                        role="progressbar"
+                        aria-valuenow="40"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="width: 40%"
+                      >
+                        <span class="sr-only">40% Complete (success)</span>
                       </div>
-                     <div class="panel-body">
-                         <div class="row">
-                             <div class="col-lg-6">
-                               <!-- form for the second content option**************************************-->
-                              
-             
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="divider"></li>
+            </ul>
+            <!-- /.dropdown-tasks -->
+          </li>
 
-                                   <div class="form-group">
-                                    <label>messageText</label>
-                                    <input class="form-control" placeholder="Enter Title of news" id = "messageText" name = "messageText"><br>
-                                    <label>Name</label>
-                                    <input class="form-control" placeholder="Enter Text of news" id = "Name" name = "Name"><br>
-                                    <label>designation</label>
-                                    <input class="form-control" placeholder="Enter Category of news" id = "designation" name = "designation"><br>
-                                 <!--  <label>Date(when it was uploaded)</label>
-                                    <input type="date" placeholder="Enter date of news" id = "uploadDate" name = "uploadDate"><br>-->
-                                  <label>Date(last-updated)</label>
-                                    <input type="date" placeholder="Updated date" id = "updateDate" name = "updateDate"><br>
-                                    <label>Name</label>
-                               <input class="form-control" placeholder="Name" id = "name" name = "name"><br>
-                               <label>E-mail</label>
-                               <input class="form-control" placeholder="E-mail" id = "email" name = "email"><br>
-                               <label>Designation</label>
-                               <input class="form-control" placeholder="Designation" id = "designation" name = "designation"><br>
-                               <label>Department</label>
-                               <input class="form-control" placeholder="Department" id = "department" name = "department"><br>
-                                  <label>Content Image</label>
-                                  <input class="form-control" type = "file" value = "upload" id = "userfile" name = "userfile">
-                               <br>
-                           </div>
+          <!-- dropdown -->
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-alerts">
+              <li>
+                <a href="#">
+                  <div>
+                    <i class="fa fa-comment fa-fw"></i> New Comment
+                    <span class="pull-right text-muted small">4 minutes ago</span>
+                  </div>
+                </a>
+              </li>
+              <li class="divider"></li>
+            </ul>
+          </li>
 
-                                  
-                                 
-                                     <button type="submit" class="btn btn-default">Insert</button>
-                                     <fieldset disabled></fieldset><!-- this is the field set inside it everything will be disabled-->
-                                 <!-- form the second content option ended....**************************************-->
-                             </div>
-                             <!-- /.col-lg-6 (nested) -->
-                             <div class="col-lg-6">
-                                 </br>
-                          <!--
-                                 <button type="submit" class="btn btn-primary">Submit Menu Item</button>
-                                 </br>
-                                 </br>
-                                 </br>
-                                 <button type="submit" class="btn btn-primary">Submit Menu Item</button>-->
-                                 </form>
-                                 <script>
-                                            CKEDITOR.replace( 'content' );
-                                        </script>
-                             </div>
-                             <!-- /.col-lg-6 (nested) -->
-                         </div>
-                         <!-- /.row (nested) -->
-                     </div>
-                     <!-- /.panel-body -->
-                 </div>
-                 <!-- /.panel -->
-             </div>
-             <!-- /.col-lg-12 -->
-         </div>
-         <!-- /.row -->
-     </div>
+          <!-- dropdown -->
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <li>
+                <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+              </li>
+            </ul>
+            <!-- /.dropdown-user -->
+          </li>
+        </ul>
 
-     <!-- /.panel-footer -->
-     </div>
-     <!-- /.panel .chat-panel -->
-     </div>
-     <!-- /.col-lg-4 -->
-     </div>
-     <!-- /.row -->
-</div>
-<!-- /#page-wrapper -->
+        <!-- side navigation div  -->
+        <div class="navbar-default sidebar" role="navigation">
+          <div class="sidebar-nav navbar-collapse">
+            <!-- side menu list -->
+            <ul class="nav" id="side-menu">
+              <!-- navbar list item  -->
+              <li class="sidebar-search">
+                <div class="input-group custom-search-form">
+                  <input type="text" class="form-control" placeholder="Search..." />
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                      <i class="fa fa-search"></i>
+                    </button>
+                  </span>
+                </div>
+              </li>
 
-</div>
-<!-- /#wrapper -->
+              <!-- navbar list item  -->
+              <li>
+                <a href="/Navbar.html"><i class="fa fa-sitemap fa-fw"></i> NavBar<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                  <li>
+                    <a href="/Navbar.html"><i class="fa fa-edit fa-fw"></i>Administration</a>
+                  </li>
+                  <li>
+                    <a href="/Navbar.html"><i class="fa fa-edit fa-fw"></i>Academics</a>
+                  </li>
+                  <li>
+                    <a href="/Navbar.html"><i class="fa fa-edit fa-fw"></i>Admissions</a>
+                  </li>
+                  <li>
+                    <a href="/Navbar.html"><i class="fa fa-edit fa-fw"></i>Research</a>
+                  </li>
+                  <li>
+                    <a href="/Navbar.html"><i class="fa fa-edit fa-fw"></i>Alumni</a>
+                  </li>
+                  <li>
+                    <a href="/Navbar.html"><i class="fa fa-edit fa-fw"></i>Life at NITJ</a>
+                  </li>
+                </ul>
+              </li>
 
-<!-- jQuery -->
-<script src="adm-assets/bower_components/jquery/dist/jquery.min.js"></script>
+              <!-- navbar list item  -->
+              <li>
+                <a href="/Latest_Event.html"
+                  ><i class="fa fa-calendar" aria-hidden="true"></i> Latest Events<span class="fa arrow"></span
+                ></a>
+                <ul class="nav nav-second-level">
+                  <li>
+                    <a href="/Latest_Event.html"><i class="fa fa-edit fa-fw"></i> Add New Event</a>
+                  </li>
+                  <li>
+                    <a href="/Latest_Event.html"><i class="fa fa-edit fa-fw"></i> Edit Event</a>
+                  </li>
+                </ul>
+              </li>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="adm-assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+              <!-- navbar list item  -->
+              <li>
+                <a href="/News.html"><i class="fa fa-newspaper-o"></i> News<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                  <li>
+                    <a href="/News.html"><i class="fa fa-edit fa-fw"></i> Add New News</a>
+                  </li>
+                  <li>
+                    <a href="/News.html"><i class="fa fa-edit fa-fw"></i> Edit News</a>
+                  </li>
+                </ul>
+              </li>
 
-<!-- Metis Menu Plugin JavaScript -->
-<script src="adm-assets/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+              <!-- navbar list item  -->
+              <li>
+                <a href="/Notice.html">
+                  <i class="fa fa-envelope" aria-hidden="true"></i> Notices<span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level">
+                  <li>
+                    <a href="/Notice.html"><i class="fa fa-edit fa-fw"></i> Add New Notice</a>
+                  </li>
+                  <li>
+                    <a href="/Notice.html"><i class="fa fa-edit fa-fw"></i> Edit Notice</a>
+                  </li>
+                </ul>
+                <!-- /.nav-second-level -->
+              </li>
 
-<!-- Custom Theme JavaScript -->
-<script src="adm-assets/dist/js/sb-admin-2.js"></script>
-<script src="adm-assets/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
-<script src="adm-assets/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+              <!-- navbar list item  -->
+              <li>
+                <a href="Administration.html"
+                  ><i class="fa fa-user" aria-hidden="true"></i> Administration<span class="fa arrow"></span
+                ></a>
+                <ul class="nav nav-second-level">
+                  <li>
+                    <a href="/Administration.html"
+                      ><i class="fa fa-user" aria-hidden="true"></i> Add New Administration
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/Administration.html"
+                      ><i class="fa fa-user" aria-hidden="true"></i> Edit Administration
+                    </a>
+                  </li>
+                </ul>
+              </li>
 
-</body>
+              <!-- navbar list item  -->
+              <li>
+                <a href="#"><i class="fa fa-book" aria-hidden="true"></i> Research Highlights</a>
+              </li>
 
+              <!-- navbar list item  -->
+              <li>
+                <a href="#"><i class="fa fa-book" aria-hidden="true"></i> Publications</a>
+              </li>
+
+              <!-- navbar list item  -->
+              <li>
+                <a href="#"><i class="fa fa-bars" aria-hidden="true"></i> Rankings</a>
+              </li>
+
+              <!-- navbar list item  -->
+              <li>
+                <a href="#"><i class="fa fa-camera fa-fw"></i> Images<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                  <li>
+                    <a href="#"><i class="fa fa-camera fa-fw"></i> Home Page Image Slider</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-camera fa-fw"></i> Photo Gallery </a>
+                  </li>
+                </ul>
+              </li>
+
+              <!-- navbar list item  -->
+              <li>
+                <a href="/Footer.html"><i class="fa fa-ellipsis-h" aria-hidden="true"></i> Footer</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- side navigation div ends  -->
+      </nav>
+      <!-- navbar ends  -->
+
+      <!-- page wrapper div  -->
+      <div id="page-wrapper">
+
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3>Add message</h3>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <form role="form">
+                      <div class="form-group">
+                        <label>messageText</label>
+                        <input
+                          class="form-control"
+                          placeholder="Enter Title of news"
+                          id="messageText"
+                          name="messageText"
+                        /><br />
+                        <label>Name</label>
+                        <input class="form-control" placeholder="Enter Text of news" id="Name" name="Name" /><br />
+                        <label>designation</label>
+                        <input
+                          class="form-control"
+                          placeholder="Enter Category of news"
+                          id="designation"
+                          name="designation"
+                        /><br />
+                        <label>Date(when it was uploaded)</label>
+                        <input type="date" placeholder="Enter date of news" id="uploadDate" name="uploadDate" /><br />
+                        <label>Name</label>
+                        <input class="form-control" placeholder="Name" id="name" name="name" /><br />
+                        <label>E-mail</label>
+                        <input class="form-control" placeholder="E-mail" id="email" name="email" /><br />
+                        <label>Designation</label>
+                        <input
+                          class="form-control"
+                          placeholder="Designation"
+                          id="designation"
+                          name="designation"
+                        /><br />
+                        <label>Department</label>
+                        <input class="form-control" placeholder="Department" id="department" name="department" /><br />
+                        <label>Content Image</label>
+                        <input class="form-control" type="file" value="upload" id="userfile" name="userfile" />
+                        <br />
+                      </div>
+
+                      <button type="submit" name="action" value="add_news" class="btn btn-default">Insert</button>
+
+                      <div class="form-group">
+                        <h3 class="page-header">Delete News</h3>
+                        <select id="del_menu" name="del_menu" class="form-control">
+                          <option value="0">Select News</option>
+                        </select>
+                      </div>
+                      <button type="Submit" name="action" value="delete_menu" class="btn btn-default">Delete</button>
+                    </form>
+                  </div>
+                </div>
+                <!-- row (nested) -->
+              </div>
+              <!-- panel-body -->
+            </div>
+            <!--panel -->
+          </div>
+          <!--col-lg-12 -->
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3>Edit</h3>
+                <label style="color: #990000">Note: , <a href="<?php echo base_url();?>index.php/Sadmin/advPages/Edit_Menus">Click Here</a></label>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-lg-6">
+
+                    <div class="form-group">
+                      <label>messageText</label>
+                      <input
+                        class="form-control"
+                        placeholder="Enter Title of news"
+                        id="messageText"
+                        name="messageText"
+                      /><br />
+                      <label>Name</label>
+                      <input class="form-control" placeholder="Enter Text of news" id="Name" name="Name" /><br />
+                      <label>designation</label>
+                      <input
+                        class="form-control"
+                        placeholder="Enter Category of news"
+                        id="designation"
+                        name="designation"
+                      /><br />
+                      <label>Date(last-updated)</label>
+                      <input type="date" placeholder="Updated date" id="updateDate" name="updateDate" /><br />
+                      <label>Name</label>
+                      <input class="form-control" placeholder="Name" id="name" name="name" /><br />
+                      <label>E-mail</label>
+                      <input class="form-control" placeholder="E-mail" id="email" name="email" /><br />
+                      <label>Designation</label>
+                      <input class="form-control" placeholder="Designation" id="designation" name="designation" /><br />
+                      <label>Department</label>
+                      <input class="form-control" placeholder="Department" id="department" name="department" /><br />
+                      <label>Content Image</label>
+                      <input class="form-control" type="file" value="upload" id="userfile" name="userfile" />
+                      <br />
+                    </div>
+                    <button type="submit" class="btn btn-default">Insert</button>
+                    <fieldset disabled></fieldset>
+
+                  </div>
+                  <!-- col-lg-6 (nested) -->
+                </div>
+                <!-- row (nested) -->
+              </div>
+              <!-- panel-body -->
+            </div>
+            <!-- panel -->
+          </div>
+          <!--col-lg-12 -->
+        </div>
+
+      </div>
+      <!-- page wrapper div  -->
+
+
+    </div>
+    <!--whole page wrapper -->
+
+    <!-- scripts --------------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- jQuery -->
+    <script src="adm-assets/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="adm-assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="adm-assets/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="adm-assets/dist/js/sb-admin-2.js"></script>
+    <script src="adm-assets/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="adm-assets/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+  </body>
 </html>
