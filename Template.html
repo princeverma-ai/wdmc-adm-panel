@@ -10,17 +10,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Administration</title>
+    <title>Admin Panel</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="adm-assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Custom CSS -->
     <link href="adm-assets/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="adm-assets/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
 
 </head>
 
@@ -372,150 +371,6 @@
             </div>
           </nav>
 
-<div id="page-wrapper">
-
-    
-         <!-- /.row -->
-         <div class="row">
-             <div class="col-lg-12">
-                 <div class="panel panel-default">
-                     <div class="panel-heading">
-                        <h3> Add message</h3>
-                     </div>
-                     <div class="panel-body">
-                         <div class="row">
-                             <div class="col-lg-6">
-              
-                                 <form role="form">
-                                
-                                     <div class="form-group">
-                                         <label>messageText</label>
-                                         <input class="form-control" placeholder="Enter Title of news" id = "messageText" name = "messageText"><br>
-                                         <label>Name</label>
-                                         <input class="form-control" placeholder="Enter Text of news" id = "Name" name = "Name"><br>
-                                         <label>designation</label>
-                                         <input class="form-control" placeholder="Enter Category of news" id = "designation" name = "designation"><br>
-                                         <label>Date(when it was uploaded)</label>
-                                         <input type="date" placeholder="Enter date of news" id = "uploadDate" name = "uploadDate"><br>
-                                      <!-- <label>Date(last-updated)</label>
-                                         <input type="date" placeholder="Updated date" id = "News_name" name = "News_name"><br>-->
-                                         <label>Name</label>
-                                    <input class="form-control" placeholder="Name" id = "name" name = "name"><br>
-                                    <label>E-mail</label>
-                                    <input class="form-control" placeholder="E-mail" id = "email" name = "email"><br>
-                                    <label>Designation</label>
-                                    <input class="form-control" placeholder="Designation" id = "designation" name = "designation"><br>
-                                    <label>Department</label>
-                                    <input class="form-control" placeholder="Department" id = "department" name = "department"><br>
-                                       <label>Content Image</label>
-                                       <input class="form-control" type = "file" value = "upload" id = "userfile" name = "userfile">
-                                    <br>
-                                </div>
-
-                                   <button type="submit" name = "action" value ="add_news" class="btn btn-default">Insert</button>
-
-                                  <div class="form-group">
-                                     <h3 class="page-header">Delete News</h3>
-                                         <select  id = "del_menu" name = "del_menu"  class="form-control">
-                                           <option value = 0>Select News </option>
-                                     
-                                         </select>
-                                     </div>
-                                     <button type="Submit" name = "action" value ="delete_menu" class="btn btn-default">Delete</button>
-
-                                 </form>
-
-                             </div>
-                         </div>
-                         <!-- /.row (nested) -->
-                     </div>
-                     <!-- /.panel-body -->
-                 </div>
-                 <!-- /.panel -->
-             </div>
-             <!-- /.col-lg-12 -->
-         </div>
-         <!-- /.row -->
-         <div class="row">
-             <div class="col-lg-12">
-                 <div class="panel panel-default">
-                     <div class="panel-heading">
-                         <h3>Edit </h3>
-                         <label style="color:#990000">Note: , <a href="<?php echo base_url();?>index.php/Sadmin/advPages/Edit_Menus">Click Here</a></label>
-                      </div>
-                     <div class="panel-body">
-                         <div class="row">
-                             <div class="col-lg-6">
-                               <!-- form for the second content option**************************************-->
-                              
-             
-
-                                   <div class="form-group">
-                                    <label>messageText</label>
-                                    <input class="form-control" placeholder="Enter Title of news" id = "messageText" name = "messageText"><br>
-                                    <label>Name</label>
-                                    <input class="form-control" placeholder="Enter Text of news" id = "Name" name = "Name"><br>
-                                    <label>designation</label>
-                                    <input class="form-control" placeholder="Enter Category of news" id = "designation" name = "designation"><br>
-                                 <!--  <label>Date(when it was uploaded)</label>
-                                    <input type="date" placeholder="Enter date of news" id = "uploadDate" name = "uploadDate"><br>-->
-                                  <label>Date(last-updated)</label>
-                                    <input type="date" placeholder="Updated date" id = "updateDate" name = "updateDate"><br>
-                                    <label>Name</label>
-                               <input class="form-control" placeholder="Name" id = "name" name = "name"><br>
-                               <label>E-mail</label>
-                               <input class="form-control" placeholder="E-mail" id = "email" name = "email"><br>
-                               <label>Designation</label>
-                               <input class="form-control" placeholder="Designation" id = "designation" name = "designation"><br>
-                               <label>Department</label>
-                               <input class="form-control" placeholder="Department" id = "department" name = "department"><br>
-                                  <label>Content Image</label>
-                                  <input class="form-control" type = "file" value = "upload" id = "userfile" name = "userfile">
-                               <br>
-                           </div>
-
-                                  
-                                 
-                                     <button type="submit" class="btn btn-default">Insert</button>
-                                     <fieldset disabled></fieldset><!-- this is the field set inside it everything will be disabled-->
-                                 <!-- form the second content option ended....**************************************-->
-                             </div>
-                             <!-- /.col-lg-6 (nested) -->
-                             <div class="col-lg-6">
-                                 </br>
-                          <!--
-                                 <button type="submit" class="btn btn-primary">Submit Menu Item</button>
-                                 </br>
-                                 </br>
-                                 </br>
-                                 <button type="submit" class="btn btn-primary">Submit Menu Item</button>-->
-                                 </form>
-                                 <script>
-                                            CKEDITOR.replace( 'content' );
-                                        </script>
-                             </div>
-                             <!-- /.col-lg-6 (nested) -->
-                         </div>
-                         <!-- /.row (nested) -->
-                     </div>
-                     <!-- /.panel-body -->
-                 </div>
-                 <!-- /.panel -->
-             </div>
-             <!-- /.col-lg-12 -->
-         </div>
-         <!-- /.row -->
-     </div>
-
-     <!-- /.panel-footer -->
-     </div>
-     <!-- /.panel .chat-panel -->
-     </div>
-     <!-- /.col-lg-4 -->
-     </div>
-     <!-- /.row -->
-     </div>
-     <!-- /#page-wrapper -->
 
      </div>
      <!-- /#wrapper -->
