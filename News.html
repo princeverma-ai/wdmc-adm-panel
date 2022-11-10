@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>NITJ - SuperUser</title>
+    <title>Notice</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="adm-assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -411,31 +411,44 @@
              <div class="col-lg-12">
                  <div class="panel panel-default">
                      <div class="panel-heading">
-                        <h3> Add New Menu</h3>
+                        <h3> Add news</h3>
                      </div>
                      <div class="panel-body">
                          <div class="row">
                              <div class="col-lg-6">
               
                                  <form role="form">
-                                   <div class="form-group">
-                                       <label>Select the Header Menu</label>
-                                       <select id = "menu" name = "menu" class="form-control">
-                                         <option value = 0>Main</option>
-                                     
-                                       </select>
-                                   </div>
-                                     <div class="form-group">
-                                         <label>Menu Title</label>
-                                         <input class="form-control" placeholder="Enter Title of Menu" id = "Menu_name" name = "Menu_name">
-                                     </div>
+                                
+                                    <div class="form-group">
+                                        <label>News Title</label>
+                                        <input class="form-control" placeholder="Enter Title of news" id = "latestnewsTitle" name = "   latestnewsTitle"><br>
+                                        <label>Content</label>
+                                        <input class="form-control" placeholder="Enter Text of news" id = "latestnewsText" name = "latestnewsText"><br>
+                                        <label>Category</label>
+                                        <input class="form-control" placeholder="Enter Category of news" id = "date" name = "date"><br>
+                                        <label>Date(when it was uploaded)</label>
+                                        <input type="date" placeholder="Enter date of news" id = "uploadDate" name = "uploadDate"><br>
+                                       <!-- <label>Date(last-updated)</label>
+                                        <input type="date" placeholder="Updated date" id = "updateDate" name = "updateDate"><br>-->
+                                        <label>Name</label>
+                                        <input class="form-control" placeholder="Name" id = " name" name = "name"><br>
+                                        <label>E-mail</label>
+                                        <input class="form-control" placeholder="E-mail" id = "email" name = "email"><br>
+                                        <label>Designation</label>
+                                        <input class="form-control" placeholder="Designation" id = "Designation" name = "Designation"><br>
+                                        <label>Department</label>
+                                        <input class="form-control" placeholder="Department" id = "department" name = "department"><br>
+                                           <label>Content Image</label>
+                                           <input class="form-control" type = "file" value = "upload" id = "userfile" name = "userfile">
+                                        <br>
+                                    </div>
 
-                                   <button type="submit" name = "action" value ="add_menu" class="btn btn-default">Insert</button>
+                                   <button type="submit" name = "action" value ="add_news" class="btn btn-default">Insert</button>
 
                                   <div class="form-group">
-                                     <h3 class="page-header">Delete Menu</h3>
+                                     <h3 class="page-header">Delete News</h3>
                                          <select  id = "del_menu" name = "del_menu"  class="form-control">
-                                           <option value = 0>Select Menu </option>
+                                           <option value = 0>Select News </option>
                                      
                                          </select>
                                      </div>
@@ -458,23 +471,49 @@
              <div class="col-lg-12">
                  <div class="panel panel-default">
                      <div class="panel-heading">
-                         <h3>Add Contents in Menu </h3>
-                         <label style="color:#990000">Note: This Section is for Adding Contents in New Menus, If you want to Edit the Contents of any existing Menu, <a href="<?php echo base_url();?>index.php/Sadmin/advPages/Edit_Menus">Click Here</a></label>
+                         <h3>Edit news </h3>
+                         <label style="color:#990000">Note: , <a href="<?php echo base_url();?>index.php/Sadmin/advPages/Edit_Menus">Click Here</a></label>
                       </div>
                      <div class="panel-body">
                          <div class="row">
                              <div class="col-lg-6">
                                <!-- form for the second content option**************************************-->
-
+                              
              
                                   <div class="form-group">
-                                       <label>Page</label>
+                                       <label>News</label>
                                        <select class="form-control" id ="mnu_fr_cntnt" name ="mnu_fr_cntnt">
-                                         <option value = "">Select Menu</option>
+                                         <option value = "">Select News</option>
                              
                                             <option value = 0>Main</option>
                                        </select>
                                    </div>
+
+                                   <div class="form-group">
+                                    <label>News Title</label>
+                                    <input class="form-control" placeholder="Enter Title of news" id = "latestnewsTitle" name = "   latestnewsTitle"><br>
+                                    <label>Content</label>
+                                    <input class="form-control" placeholder="Enter Text of news" id = "latestnewsText" name = "latestnewsText"><br>
+                                    <label>Category</label>
+                                    <input class="form-control" placeholder="Enter Category of news" id = "newsCategory" name = "newsCategory"><br>
+                                    <!--<label>Date(when it was uploaded)</label>
+                                    <input type="date" placeholder="Enter date of news" id = "News_name" name = "News_name"><br>-->
+                                    <label>Date(last-updated)</label>
+                                    <input type="date" placeholder="Updated date" id = "updateDate" name = "updateDate"><br>
+                                    <label>Name</label>
+                                    <input class="form-control" placeholder="Name" id = " name" name = "name"><br>
+                                    <label>E-mail</label>
+                                    <input class="form-control" placeholder="E-mail" id = "email" name = "email"><br>
+                                    <label>Designation</label>
+                                    <input class="form-control" placeholder="Designation" id = "Designation" name = "Designation"><br>
+                                    <label>Department</label>
+                                    <input class="form-control" placeholder="Department" id = "department" name = "department"><br>
+                                       <label>Content Image</label>
+                                       <input class="form-control" type = "file" value = "upload" id = "userfile" name = "userfile">
+                                    <br>
+                                </div>
+
+
                                    <div class="form-group">
                                      <label>Content Image</label>
                                      <input class="form-control" type = "file" value = "upload" id = "userfile" name = "userfile">
@@ -659,6 +698,14 @@ $(document).ready(function() {
 </script>
 </body>
 <!-- default date and time picker-->
+
+
+
+
+
+
+
+
 
 <!-- default date and time picker ends here-->
 </html>
