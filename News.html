@@ -417,45 +417,40 @@
                          <div class="row">
                              <div class="col-lg-6">
               
-                                 <form role="form">
+                                 <form role="form"
+                                 id="newsform">
                                 
-                                    <div class="form-group">
+                                    <div class="form-group" >
                                         <label>News Title</label>
-                                        <input class="form-control" placeholder="Enter Title of news" id = "latestnewsTitle" name = "   latestnewsTitle"><br>
+                                        <input class="form-control" placeholder="Enter Title of news" id = "title" name = "latestnewsTitle"><br>
                                         <label>Content</label>
-                                        <input class="form-control" placeholder="Enter Text of news" id = "latestnewsText" name = "latestnewsText"><br>
-                                        <label>Category</label>
-                                        <input class="form-control" placeholder="Enter Category of news" id = "date" name = "date"><br>
-                                        <label>Date(when it was uploaded)</label>
-                                        <input type="date" placeholder="Enter date of news" id = "uploadDate" name = "uploadDate"><br>
-                                       <!-- <label>Date(last-updated)</label>
-                                        <input type="date" placeholder="Updated date" id = "updateDate" name = "updateDate"><br>-->
+                                        <input class="form-control" placeholder="Enter Text of news" id = "desc" name = "latestnewsText"><br>
+                                       
                                         <label>Name</label>
-                                        <input class="form-control" placeholder="Name" id = " name" name = "name"><br>
+                                        <input class="form-control" placeholder="Name" id = "name" name = "name"><br>
                                         <label>E-mail</label>
                                         <input class="form-control" placeholder="E-mail" id = "email" name = "email"><br>
                                         <label>Designation</label>
-                                        <input class="form-control" placeholder="Designation" id = "Designation" name = "Designation"><br>
+                                        <input class="form-control" placeholder="Designation" id = "designation" name = "Designation"><br>
                                         <label>Department</label>
                                         <input class="form-control" placeholder="Department" id = "department" name = "department"><br>
-                                           <label>Content Image</label>
-                                           <input class="form-control" type = "file" value = "upload" id = "userfile" name = "userfile">
-                                        <br>
+                                          
                                     </div>
 
                                    <button type="submit" name = "action" value ="add_news" class="btn btn-default">Insert</button>
 
-                                  <div class="form-group">
-                                     <h3 class="page-header">Delete News</h3>
-                                         <select  id = "del_menu" name = "del_menu"  class="form-control">
-                                           <option value = 0>Select News </option>
-                                     
-                                         </select>
-                                     </div>
-                                     <button type="Submit" name = "action" value ="delete_menu" class="btn btn-default">Delete</button>
 
                                  </form>
-
+                                
+                                 <div class="form-group">
+                                    <h3 class="page-header">Delete News</h3>
+                                        <select  id = "del_menu" name = "del_menu"  class="form-control">
+                                          <option value = 0>Select News </option>
+                                    
+                                        </select>
+                                    </div>
+                                    <button type="Submit" name = "action" value ="delete_menu" class="btn btn-default"
+                                    onclick="deleteNews()">Delete</button>
                              </div>
                          </div>
                          <!-- /.row (nested) -->
@@ -485,46 +480,37 @@
                                        <select class="form-control" id ="mnu_fr_cntnt" name ="mnu_fr_cntnt">
                                          <option value = "">Select News</option>
                              
-                                            <option value = 0>Main</option>
+                                    
                                        </select>
-                                   </div>
 
-                                   <div class="form-group">
+                                       
+                                   </div>
+                                   <button type="submit" name = "action" value ="add_news" class="btn btn-default"
+                                   style="margin-bottom: 15px;"
+                                   onclick="placeNews()">Select News</button>
+
+                                   <form role="form"
+                                   id="updateform">
+                                   <div class="form-group" >
                                     <label>News Title</label>
-                                    <input class="form-control" placeholder="Enter Title of news" id = "latestnewsTitle" name = "   latestnewsTitle"><br>
+                                    <input class="form-control" placeholder="Enter Title of news" id = "updatetitle" name = "latestnewsTitle"><br>
                                     <label>Content</label>
-                                    <input class="form-control" placeholder="Enter Text of news" id = "latestnewsText" name = "latestnewsText"><br>
-                                    <label>Category</label>
-                                    <input class="form-control" placeholder="Enter Category of news" id = "newsCategory" name = "newsCategory"><br>
-                                    <!--<label>Date(when it was uploaded)</label>
-                                    <input type="date" placeholder="Enter date of news" id = "News_name" name = "News_name"><br>-->
-                                    <label>Date(last-updated)</label>
-                                    <input type="date" placeholder="Updated date" id = "updateDate" name = "updateDate"><br>
+                                    <input class="form-control" placeholder="Enter Text of news" id = "updatedesc" name = "latestnewsText"><br>
+                                   
                                     <label>Name</label>
-                                    <input class="form-control" placeholder="Name" id = " name" name = "name"><br>
+                                    <input class="form-control" placeholder="Name" id = "updatename" name = "name"><br>
                                     <label>E-mail</label>
-                                    <input class="form-control" placeholder="E-mail" id = "email" name = "email"><br>
+                                    <input class="form-control" placeholder="E-mail" id = "updateemail" name = "email"><br>
                                     <label>Designation</label>
-                                    <input class="form-control" placeholder="Designation" id = "Designation" name = "Designation"><br>
+                                    <input class="form-control" placeholder="Designation" id = "updatedesignation" name = "Designation"><br>
                                     <label>Department</label>
-                                    <input class="form-control" placeholder="Department" id = "department" name = "department"><br>
-                                       <label>Content Image</label>
-                                       <input class="form-control" type = "file" value = "upload" id = "userfile" name = "userfile">
-                                    <br>
+                                    <input class="form-control" placeholder="Department" id = "updatedepartment" name = "department"><br>
+                                      
                                 </div>
-
-
-                                   <div class="form-group">
-                                     <label>Content Image</label>
-                                     <input class="form-control" type = "file" value = "upload" id = "userfile" name = "userfile">
-                                   </div>
-                                   <label>Contents</label>
-                                   <div class="form-group">
-
-                                           <textarea id = "content" name = "content" rows="3"></textarea>
-                                     </div>
-                                     <button type="submit" class="btn btn-default">Insert</button>
-                                     <fieldset disabled></fieldset><!-- this is the field set inside it everything will be disabled-->
+                                
+                                <button type="submit" name = "action" value ="add_news" class="btn btn-default">update</button>
+                                </form>
+                            <!-- this is the field set inside it everything will be disabled-->
                                  <!-- form the second content option ended....**************************************-->
                              </div>
                              <!-- /.col-lg-6 (nested) -->
@@ -630,7 +616,7 @@ jQuery('#datetimepicker2').datetimepicker(
 <script src="adm-assets/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
 <script src="adm-assets/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
 
-
+<script src="./js/latestNews.js"></script>
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 
 <script>
