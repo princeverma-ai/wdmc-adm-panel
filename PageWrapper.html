@@ -9,30 +9,28 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
-                            <form role="form">
+                            <form role="form" id="addForm">
                                 <div class="form-group">
                                     <label>Title</label>
-                                    <input class="form-control" placeholder="Enter Title" id="title" name="title" /><br />
+                                    <input class="form-control" placeholder="Enter Title" id="addtitle" name="title" /><br />
                                     <label>Text</label>
-                                    <input class="form-control" placeholder="Enter Text" id="text" name="text" /><br />
+                                    <input class="form-control" placeholder="Enter Text" id="addtext" name="text" /><br />
                                     <label>link</label>
-                                    <input class="form-control" placeholder="Enter Link" id="link" name="link" /><br />
-                                    <label>Date(when it was uploaded)</label>
-                                    <input type="date" placeholder="Enter date" id="uploadDate" name="uploadDate" /><br />
-                                    <label>Name</label>
-                                    <input class="form-control" placeholder="Name" id="name" name="name" /><br />
-                                    <label>E-mail</label>
-                                    <input class="form-control" placeholder="E-mail" id="email" name="email" /><br />
-                                    <label>Designation</label>
-                                    <input class="form-control" placeholder="Designation" id="designation" name="designation" /><br />
-                                    <label>Department</label>
-                                    <input class="form-control" placeholder="Department" id="department" name="department" /><br />
+                                    <input class="form-control" placeholder="Enter Link" id="addlink" name="link" /><br />
+                                    <label>Source Name</label>
+                                    <input class="form-control" value="Webmaster" placeholder="Name" id="addname" name="name" /><br />
+                                    <label>Source E-mail</label>
+                                    <input class="form-control" value="webmaster@nitj.ac.in" placeholder="E-mail" id="addemail" name="email" /><br />
+                                    <label>Source Designation</label>
+                                    <input class="form-control" value="Webmaster" placeholder="Designation" id="adddesignation" name="designation" /><br />
+                                    <label>Source Department</label>
+                                    <input class="form-control" value="Webmaster" placeholder="Department" id="adddepartment" name="department" /><br />
                                     <label>Content Image</label>
-                                    <input class="form-control" type="file" value="upload" id="userfile" name="userfile" />
+                                    <input class="form-control" type="file" value="upload" id="adduserfile" name="userfile" />
                                     <br />
                                 </div>
 
-                                <button type="submit" name="action" value="add_news" class="btn btn-default">Insert</button>
+                                <button type="submit" name="action" class="btn btn-default">Insert</button>
                             </form>
                         </div>
                     </div>
@@ -54,28 +52,30 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
-                            <div class="form-group">
-                                <label>id</label>
-                                <input class="form-control" placeholder="Enter Title of news" id="id" name="id" /><br />
-                                <label>Title</label>
-                                <input class="form-control" placeholder="Enter Text of news" id="title" name="title" /><br />
-                                <label>Text</label>
-                                <input class="form-control" placeholder="Enter Text" id="text" name="text" /><br />
-                                <label>Date(last-updated)</label>
-                                <input type="date" placeholder="Updated date" id="updateDate" name="updateDate" /><br />
-                                <label>Name</label>
-                                <input class="form-control" placeholder="Name" id="name" name="name" /><br />
-                                <label>E-mail</label>
-                                <input class="form-control" placeholder="E-mail" id="email" name="email" /><br />
-                                <label>Designation</label>
-                                <input class="form-control" placeholder="Designation" id="designation" name="designation" /><br />
-                                <label>Department</label>
-                                <input class="form-control" placeholder="Department" id="department" name="department" /><br />
-                                <label>Content Image</label>
-                                <input class="form-control" type="file" value="upload" id="userfile" name="userfile" />
-                                <br />
-                            </div>
-                            <button type="submit" class="btn btn-default">Insert</button>
+                            <form role="form" id="editForm">
+                                <div class="form-group">
+                                    <label>id</label>
+                                    <input class="form-control" placeholder="Enter id" id="editid" name="id" /><br />
+                                    <label>Title</label>
+                                    <input class="form-control" placeholder="Enter Title" id="edittitle" name="title" /><br />
+                                    <label>Text</label>
+                                    <input class="form-control" placeholder="Enter Text" id="edittext" name="text" /><br />
+                                    <label>Link</label>
+                                    <input class="form-control" placeholder="Enter Link" id="editlink" name="link" /><br />
+                                    <label>Source Name</label>
+                                    <input class="form-control" value="Webmaster" placeholder="Name" id="editname" name="name" /><br />
+                                    <label>Source E-mail</label>
+                                    <input class="form-control" value="webmaster@nitj.ac.in" placeholder="E-mail" id="editemail" name="email" /><br />
+                                    <label>Source Designation</label>
+                                    <input class="form-control" value="Webmaster" placeholder="Designation" id="editdesignation" name="designation" /><br />
+                                    <label>Source Department</label>
+                                    <input class="form-control" value="Webmaster" placeholder="Department" id="editdepartment" name="department" /><br />
+                                    <label>Content Image</label>
+                                    <input class="form-control" type="file" value="upload" id="edituserfile" name="userfile" />
+                                    <br />
+                                </div>
+                                <button type="submit" class="btn btn-default">Insert</button>
+                            </form>
                         </div>
                         <!-- col-lg-6 (nested) -->
                     </div>
@@ -99,6 +99,7 @@
                         <th>link</th>
                         <th>Date</th>
                         <th>UpdateDate</th>
+                        <th>Source</th>
                         <th>options</th>
                     </tr>
                 </thead>
@@ -111,10 +112,9 @@
                         <td>date</td>
                         <td>updateDate</td>
                         <td>
+                            <button type="button" class="btn btn-success btn-xs">View</button>
                             <button type="button" class="btn btn-primary btn-xs">Edit</button>
                             <button type="button" class="btn btn-danger btn-xs">Delete</button>
-                            <!-- copy id button  -->
-                            <button type="button" class="btn btn-success btn-xs">Copy id</button>
                         </td>
                     </tr>
                 </tbody>
