@@ -185,42 +185,40 @@
                 <!-- side navigation div ends  -->
             </nav>
             <!-- navbar ends  -->
-
             <!-- page wrapper div  -->
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3>Add Content</h3>
+                    <h3>Add Research Highlight</h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
-                            <form role="form">
+                            <form role="form" id="addForm">
                                 <div class="form-group">
-                                    <label>Title</label>
-                                    <input class="form-control" placeholder="Enter Title" id="title" name="title" /><br />
-                                    <label>Text</label>
-                                    <input class="form-control" placeholder="Enter Text" id="text" name="text" /><br />
-                                    <label>link</label>
-                                    <input class="form-control" placeholder="Enter Link" id="link" name="link" /><br />
-                                    <label>Date(when it was uploaded)</label>
-                                    <input type="date" placeholder="Enter date" id="uploadDate" name="uploadDate" /><br />
-                                    <label>Name</label>
-                                    <input class="form-control" placeholder="Name" id="name" name="name" /><br />
-                                    <label>E-mail</label>
-                                    <input class="form-control" placeholder="E-mail" id="email" name="email" /><br />
-                                    <label>Designation</label>
-                                    <input class="form-control" placeholder="Designation" id="designation" name="designation" /><br />
-                                    <label>Department</label>
-                                    <input class="form-control" placeholder="Department" id="department" name="department" /><br />
+                                    <label>title</label>
+                                    <input class="form-control" placeholder="Enter title" id="addtitle" name="title" /><br />
+                                    <label>desc</label>
+                                    <input class="form-control" placeholder="Enter desc" id="adddesc" name="desc" /><br />
+                                    <label>type</label>
+                                    <input class="form-control" placeholder="Enter type" id="addtype" name="type" /><br />
+                                    
+                                    <label>Source Name</label>
+                                    <input class="form-control" value="Webmaster" placeholder="Name" id="addname" name="name" /><br />
+                                    <label>Source E-mail</label>
+                                    <input class="form-control" value="webmaster@nitj.ac.in" placeholder="E-mail" id="addemail" name="email" /><br />
+                                    <label>Source Designation</label>
+                                    <input class="form-control" value="Webmaster" placeholder="Designation" id="adddesignation" name="designation" /><br />
+                                    <label>Source Department</label>
+                                    <input class="form-control" value="Webmaster" placeholder="Department" id="adddepartment" name="department" /><br />
                                     <label>Content Image</label>
-                                    <input class="form-control" type="file" value="upload" id="userfile" name="userfile" />
+                                    <input class="form-control" type="file" value="upload" id="adduserfile" name="userfile" />
                                     <br />
                                 </div>
 
-                                <button type="submit" name="action" value="add_news" class="btn btn-default">Insert</button>
+                                <button type="submit" name="action" class="btn btn-default">Insert</button>
                             </form>
                         </div>
                     </div>
@@ -242,28 +240,31 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
-                            <div class="form-group">
-                                <label>id</label>
-                                <input class="form-control" placeholder="Enter Title of news" id="id" name="id" /><br />
-                                <label>Title</label>
-                                <input class="form-control" placeholder="Enter Text of news" id="title" name="title" /><br />
-                                <label>Text</label>
-                                <input class="form-control" placeholder="Enter Text" id="text" name="text" /><br />
-                                <label>Date(last-updated)</label>
-                                <input type="date" placeholder="Updated date" id="updateDate" name="updateDate" /><br />
-                                <label>Name</label>
-                                <input class="form-control" placeholder="Name" id="name" name="name" /><br />
-                                <label>E-mail</label>
-                                <input class="form-control" placeholder="E-mail" id="email" name="email" /><br />
-                                <label>Designation</label>
-                                <input class="form-control" placeholder="Designation" id="designation" name="designation" /><br />
-                                <label>Department</label>
-                                <input class="form-control" placeholder="Department" id="department" name="department" /><br />
-                                <label>Content Image</label>
-                                <input class="form-control" type="file" value="upload" id="userfile" name="userfile" />
-                                <br />
-                            </div>
-                            <button type="submit" class="btn btn-default">Insert</button>
+                            <form role="form" id="editForm">
+                                <div class="form-group">
+                                    <label>id</label>
+                                    <input class="form-control" placeholder="Enter id" id="editid" name="id" /><br />
+                                    <label>title</label>
+                                    <input class="form-control" placeholder="Enter title" id="edittitle" name="title" /><br />
+                                    <label>desc</label>
+                                    <input class="form-control" placeholder="Enter desc" id="editdesc" name="desc" /><br />
+                                    <label>type</label>
+                                    <input class="form-control" placeholder="Enter type" id="edittype" name="type" /><br />
+                                    
+                                    <label>Source Name</label>
+                                    <input class="form-control" value="Webmaster" placeholder="Name" id="editname" name="name" /><br />
+                                    <label>Source E-mail</label>
+                                    <input class="form-control" value="webmaster@nitj.ac.in" placeholder="E-mail" id="editemail" name="email" /><br />
+                                    <label>Source Designation</label>
+                                    <input class="form-control" value="Webmaster" placeholder="Designation" id="editdesignation" name="designation" /><br />
+                                    <label>Source Department</label>
+                                    <input class="form-control" value="Webmaster" placeholder="Department" id="editdepartment" name="department" /><br />
+                                    <label>Content Image</label>
+                                    <input class="form-control" type="file" value="upload" id="edituserfile" name="userfile" />
+                                    <br />
+                                </div>
+                                <button type="submit" class="btn btn-default">Insert</button>
+                            </form>
                         </div>
                         <!-- col-lg-6 (nested) -->
                     </div>
@@ -282,29 +283,18 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Content Title</th>
-                        <th>Content Text</th>
-                        <th>link</th>
+                        <th>title</th>
+                        <th>type</th>
+                        <th>desc</th>
+                        <th>image Link</th>
                         <th>Date</th>
                         <th>UpdateDate</th>
+                        <th>Source</th>
                         <th>options</th>
                     </tr>
                 </thead>
                 <tbody id="tablebody">
-                    <tr>
-                        <td>1</td>
-                        <td>title</td>
-                        <td>text</td>
-                        <td>link</td>
-                        <td>date</td>
-                        <td>updateDate</td>
-                        <td>
-                            <button type="button" class="btn btn-primary btn-xs">Edit</button>
-                            <button type="button" class="btn btn-danger btn-xs">Delete</button>
-                            <!-- copy id button  -->
-                            <button type="button" class="btn btn-success btn-xs">Copy id</button>
-                        </td>
-                    </tr>
+                   
                 </tbody>
             </table>
         </div>
@@ -329,5 +319,7 @@
         <script src="adm-assets/dist/js/sb-admin-2.js"></script>
         <script src="adm-assets/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
         <script src="adm-assets/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="js/researchHighlights.js"></script>
     </body>
 </html>

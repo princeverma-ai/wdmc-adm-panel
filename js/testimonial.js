@@ -13,17 +13,16 @@ const defaultSourceOfInfo = {
 
 //function to add data to table
 function addDataToTable(data) {
-    
     for (let i = 0; i < data.length; i++) {
-        let dataSourceOfInfo = data[i].sourceOfInfo ||"";
+        let dataSourceOfInfo = data[i].sourceOfInfo || "";
         tableBodyDom.innerHTML += `<tr>
         <td>${data[i]._id}</td>
-        <td>${data[i].Publication.authors}</td>
-        <td>${data[i].Publication.desc}</td>
-        <td>${data[i].Publication.url || "No url"}</td>
+        <td>${data[i].name}</td>
+        <td>${data[i].messageText}</td>
+        <td>${data[i].designation}</td>
         <td>${new Date(data[i].createdAt).toDateString()}</td>
         <td>${new Date(data[i].updatedAt).toDateString()}</td>
-        <td>${dataSourceOfInfo.name ||""} ${dataSourceOfInfo.designation || ""} ${dataSourceOfInfo.email || ""} ${dataSourceOfInfo.department || ""}</td>
+        <td>${dataSourceOfInfo.name} ${dataSourceOfInfo.designation || ""} ${dataSourceOfInfo.email || ""} ${dataSourceOfInfo.department || ""}</td>
         <td>
         <button type="button" class="btn btn-success btn-xs">View</button>
             <button type="button" class="btn btn-primary btn-xs ">Edit</button>
@@ -36,7 +35,7 @@ function addDataToTable(data) {
 
 //fetch data from server
 axios
-    .get("https://wdmc.onrender.com/publication/get/all")
+    .get("https://wdmc.onrender.com/testimonial/get/all")
     .then((response) => {
         console.log(response.data);
         addDataToTable(response.data);
@@ -49,12 +48,12 @@ axios
 //add form event
 addFormDom.addEventListener("submit", (e) => {
     e.preventDefault();
-    const author = document.getElementById("addauthor").value;
-    const desc = document.getElementById("adddescription").value;
-    const url = document.getElementById("addlink").value;
+    const name = document.getElementById("addtestimonialname").value;
+    const messageText = document.getElementById("addmessageText").value;
+    const designation = document.getElementById("adddesignation").value;
 
-    if (author == "") {
-        alert("Please enter author");
+    if (name == "") {
+        alert("Please enter name");
         return;
     }
 
@@ -66,13 +65,10 @@ addFormDom.addEventListener("submit", (e) => {
     };
 
     axios
-        .post("https://wdmc.onrender.com/publication/", {
-            Publication:{
-                authors: author,
-                desc: desc || "",
-                url: url || "",
-            }
-            ,
+        .post("https://wdmc.onrender.com/testimonial/", {
+            name: name,
+            messageText: messageText || "",
+            designation: designation || "",
             sourceOfInfo: sourceOfInfo,
         })
         .then((response) => {
@@ -90,12 +86,12 @@ addFormDom.addEventListener("submit", (e) => {
 editFormDom.addEventListener("submit", (e) => {
     e.preventDefault();
     const id = document.getElementById("editid").value;
-    const author = document.getElementById("editauthor").value;
-    const desc = document.getElementById("editdescription").value;
-    const url = document.getElementById("editlink").value;
+    const name = document.getElementById("editname").value;
+    const messageText = document.getElementById("editmessageText").value;
+    const designation = document.getElementById("editdesignation").value;
 
-    if (author == "") {
-        alert("Please enter author");
+    if (name == "") {
+        alert("Please enter name");
         return;
     }
 
@@ -107,12 +103,10 @@ editFormDom.addEventListener("submit", (e) => {
     };
 
     axios
-        .patch(`https://wdmc.onrender.com/publication/${id}`, {
-            Publication:{
-                authors: author,
-                desc: desc || "",
-                url: url || "",
-            },
+        .patch(`https://wdmc.onrender.com/testimonial/${id}`, {
+            name: name,
+            messageText: messageText || "",
+            designation: designation || "",
             sourceOfInfo: sourceOfInfo,
         })
         .then((response) => {

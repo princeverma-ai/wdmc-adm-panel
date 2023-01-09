@@ -13,17 +13,17 @@ const defaultSourceOfInfo = {
 
 //function to add data to table
 function addDataToTable(data) {
-    
     for (let i = 0; i < data.length; i++) {
         let dataSourceOfInfo = data[i].sourceOfInfo ||"";
         tableBodyDom.innerHTML += `<tr>
         <td>${data[i]._id}</td>
-        <td>${data[i].Publication.authors}</td>
-        <td>${data[i].Publication.desc}</td>
-        <td>${data[i].Publication.url || "No url"}</td>
+        <td>${data[i].name || ""}</td>
+        <td>${data[i].desc}</td>
+        <td>${data[i].type}</td>
+        <td>${data[i].img}</td>
         <td>${new Date(data[i].createdAt).toDateString()}</td>
         <td>${new Date(data[i].updatedAt).toDateString()}</td>
-        <td>${dataSourceOfInfo.name ||""} ${dataSourceOfInfo.designation || ""} ${dataSourceOfInfo.email || ""} ${dataSourceOfInfo.department || ""}</td>
+        <td>${dataSourceOfInfo.name} ${dataSourceOfInfo.designation || ""} ${dataSourceOfInfo.email || ""} ${dataSourceOfInfo.department || ""}</td>
         <td>
         <button type="button" class="btn btn-success btn-xs">View</button>
             <button type="button" class="btn btn-primary btn-xs ">Edit</button>
@@ -34,9 +34,10 @@ function addDataToTable(data) {
     }
 }
 
+
 //fetch data from server
 axios
-    .get("https://wdmc.onrender.com/publication/get/all")
+    .get("https://wdmc.onrender.com/club/get/all")
     .then((response) => {
         console.log(response.data);
         addDataToTable(response.data);
@@ -49,12 +50,13 @@ axios
 //add form event
 addFormDom.addEventListener("submit", (e) => {
     e.preventDefault();
-    const author = document.getElementById("addauthor").value;
-    const desc = document.getElementById("adddescription").value;
-    const url = document.getElementById("addlink").value;
+    const name = document.getElementById("addname").value;
+    const desc = document.getElementById("adddesc").value;
+    const type = document.getElementById("addtype").value;
+    const img  = document.getElementById("addimage").value;
 
-    if (author == "") {
-        alert("Please enter author");
+    if (name == "") {
+        alert("Please enter name");
         return;
     }
 
@@ -64,16 +66,15 @@ addFormDom.addEventListener("submit", (e) => {
         designation: document.getElementById("adddesignation").value || defaultSourceOfInfo.designation,
         department: document.getElementById("adddepartment").value || defaultSourceOfInfo.department,
     };
-
+    
     axios
-        .post("https://wdmc.onrender.com/publication/", {
-            Publication:{
-                authors: author,
-                desc: desc || "",
-                url: url || "",
-            }
-            ,
-            sourceOfInfo: sourceOfInfo,
+        .post("https://wdmc.onrender.com/club/", {
+            name: name,
+            desc: desc || "",
+            type: type || "",
+            img:img,
+            sourceOfInfo: sourceOfInfo
+            
         })
         .then((response) => {
             console.log(response);
@@ -90,12 +91,13 @@ addFormDom.addEventListener("submit", (e) => {
 editFormDom.addEventListener("submit", (e) => {
     e.preventDefault();
     const id = document.getElementById("editid").value;
-    const author = document.getElementById("editauthor").value;
-    const desc = document.getElementById("editdescription").value;
-    const url = document.getElementById("editlink").value;
+    const name = document.getElementById("editname").value;
+    const desc = document.getElementById("editdesc").value;
+    const type = document.getElementById("edittype").value;
+    const img = document.getElementById("editimage").value;
 
-    if (author == "") {
-        alert("Please enter author");
+    if (name == "") {
+        alert("Please enter name");
         return;
     }
 
@@ -107,13 +109,13 @@ editFormDom.addEventListener("submit", (e) => {
     };
 
     axios
-        .patch(`https://wdmc.onrender.com/publication/${id}`, {
-            Publication:{
-                authors: author,
-                desc: desc || "",
-                url: url || "",
-            },
-            sourceOfInfo: sourceOfInfo,
+        .patch(`https://wdmc.onrender.com/club/${id}`, {
+            name: name,
+            desc: desc || "",
+            type: type || "",
+            img:img ||"",
+            sourceOfInfo: sourceOfInfo
+            
         })
         .then((response) => {
             console.log(response);

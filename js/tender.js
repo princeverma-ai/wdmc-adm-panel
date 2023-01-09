@@ -13,17 +13,18 @@ const defaultSourceOfInfo = {
 
 //function to add data to table
 function addDataToTable(data) {
-    
     for (let i = 0; i < data.length; i++) {
-        let dataSourceOfInfo = data[i].sourceOfInfo ||"";
+        let dataSourceOfInfo = data[i].sourceOfInfo || "";
         tableBodyDom.innerHTML += `<tr>
         <td>${data[i]._id}</td>
-        <td>${data[i].Publication.authors}</td>
-        <td>${data[i].Publication.desc}</td>
-        <td>${data[i].Publication.url || "No url"}</td>
+        <td>${data[i].lastDateOfReceiptOfBids}</td>
+        <td>${data[i].dateOfOpeningTechnicalBids}</td>
+        <td>${data[i].desc}</td>
+        <td>${data[i].fileLink || "No link"}</td>
+        <td>${data[i].imageLink || "No link"}</td>
         <td>${new Date(data[i].createdAt).toDateString()}</td>
         <td>${new Date(data[i].updatedAt).toDateString()}</td>
-        <td>${dataSourceOfInfo.name ||""} ${dataSourceOfInfo.designation || ""} ${dataSourceOfInfo.email || ""} ${dataSourceOfInfo.department || ""}</td>
+        <td>${dataSourceOfInfo.name} ${dataSourceOfInfo.designation || ""} ${dataSourceOfInfo.email || ""} ${dataSourceOfInfo.department || ""}</td>
         <td>
         <button type="button" class="btn btn-success btn-xs">View</button>
             <button type="button" class="btn btn-primary btn-xs ">Edit</button>
@@ -36,7 +37,7 @@ function addDataToTable(data) {
 
 //fetch data from server
 axios
-    .get("https://wdmc.onrender.com/publication/get/all")
+    .get("https://wdmc.onrender.com/tender/get/all")
     .then((response) => {
         console.log(response.data);
         addDataToTable(response.data);
@@ -49,12 +50,15 @@ axios
 //add form event
 addFormDom.addEventListener("submit", (e) => {
     e.preventDefault();
-    const author = document.getElementById("addauthor").value;
-    const desc = document.getElementById("adddescription").value;
-    const url = document.getElementById("addlink").value;
+    const lastDateOfReceiptOfBids = document.getElementById("addReceiptOfBirds").value;
+    const dateOfOpeningTechnicalBids = document.getElementById("addtext").value;
+    const desc = document.getElementById("adddesc").value;
+    const fileLink = document.getElementById("addfilelink").value;
+    const imageLink = document.getElementById("addimagelink").value;
 
-    if (author == "") {
-        alert("Please enter author");
+
+    if (desc == "") {
+        alert("Please enter title");
         return;
     }
 
@@ -66,13 +70,12 @@ addFormDom.addEventListener("submit", (e) => {
     };
 
     axios
-        .post("https://wdmc.onrender.com/publication/", {
-            Publication:{
-                authors: author,
-                desc: desc || "",
-                url: url || "",
-            }
-            ,
+        .post("https://wdmc.onrender.com/tender/", {
+            lastDateOfReceiptOfBids: lastDateOfReceiptOfBids,
+            dateOfOpeningTechnicalBids:dateOfOpeningTechnicalBids,
+            desc: desc || "",
+            fileLink: fileLink || "",
+            imageLink: imageLink || "",
             sourceOfInfo: sourceOfInfo,
         })
         .then((response) => {
@@ -90,14 +93,13 @@ addFormDom.addEventListener("submit", (e) => {
 editFormDom.addEventListener("submit", (e) => {
     e.preventDefault();
     const id = document.getElementById("editid").value;
-    const author = document.getElementById("editauthor").value;
-    const desc = document.getElementById("editdescription").value;
-    const url = document.getElementById("editlink").value;
+    const lastDateOfReceiptOfBids = document.getElementById("editlastDate").value;
+    const dateOfOpeningTechnicalBids = document.getElementById("editdateOf").value;
+    const desc = document.getElementById("edittext").value;
+    const fileLink = document.getElementById("editfileLink").value;
+    const imageLink = document.getElementById("editimageLink").value;
 
-    if (author == "") {
-        alert("Please enter author");
-        return;
-    }
+
 
     let sourceOfInfo = {
         name: document.getElementById("editname").value || defaultSourceOfInfo.name,
@@ -107,12 +109,12 @@ editFormDom.addEventListener("submit", (e) => {
     };
 
     axios
-        .patch(`https://wdmc.onrender.com/publication/${id}`, {
-            Publication:{
-                authors: author,
-                desc: desc || "",
-                url: url || "",
-            },
+        .patch(`https://wdmc.onrender.com/tender/${id}`, {
+            lastDateOfReceiptOfBids: lastDateOfReceiptOfBids,
+            dateOfOpeningTechnicalBids:dateOfOpeningTechnicalBids,
+            desc: desc || "",
+            fileLink: fileLink || "",
+            imageLink: imageLink || "",
             sourceOfInfo: sourceOfInfo,
         })
         .then((response) => {
